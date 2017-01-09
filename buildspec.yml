@@ -1,0 +1,21 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - echo Installing Gems...
+      - bundle install --without rmagick
+  pre-build:
+    commands:
+      - echo Preparing started on `date`
+      - ./bin/rake db:migrate 
+  build:
+    commands:
+      - echo Test started on `date`
+      - bundle exec rake test 
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - redmine-latest.zip
