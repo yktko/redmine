@@ -9,8 +9,9 @@ phases:
       - apt-get install -y  libmysqlclient20 libpq5 libyaml-0-2 libcurl3 libssl1.0.0 uuid-dev xz-utils 
       - apt-get install -y  libxslt1.1 libffi6 zlib1g gsfonts 
       - apt-get install -y  libsqlite3-dev libmysqlclient-dev 
-      - update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX \
-      - echo 'gem: --no-rdoc --no-ri' >> /.gemrc && gem install bundler rake 
+      - update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX
+      - echo "gem: --no-rdoc --no-ri" >> /.gemrc
+      - gem install bundler rake
       - bundle install --without rmagick
   pre-build:
     commands:
