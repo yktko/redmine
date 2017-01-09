@@ -1,6 +1,4 @@
 version: 0.1
-
-environment_variables:
 phases:
   install:
     commands:
@@ -17,4 +15,4 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - git archive --format=zip HEAD > redmine-latest.zip
+      - git archive --format=zip HEAD --output redmine-latest.zip
