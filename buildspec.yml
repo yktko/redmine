@@ -1,11 +1,12 @@
 version: 0.1
 
+environment_variables:
 phases:
   install:
     commands:
       - echo Installing Pkgs and Gems...
       - /bin/sh ./install.sh
-  pre-build:
+  pre_build:
     commands:
       - echo Preparing started on `date`
       - ./bin/rake db:migrate 
