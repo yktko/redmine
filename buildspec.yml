@@ -16,3 +16,6 @@ phases:
     commands:
       - echo Build completed on `date`
       - git archive --format=zip HEAD --output redmine-latest.zip
+artifacts:
+  files:
+    - redmine-latest.zip
