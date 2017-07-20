@@ -198,12 +198,12 @@ class Redmine::I18nTest < ActiveSupport::TestCase
     assert_equal ["UTF-8"], strings.map(&:encoding).uniq.map(&:name).sort
   end
 
-/*
+=begin
   def test_languages_options_should_ignore_locales_without_general_lang_name_key
     stubs(:valid_languages).returns([:en, :foo])
     assert_equal [["English", "en"]], languages_options(:cache => false)
   end
-*/
+=end
 
   def test_locales_validness
     lang_files_count = Dir["#{Rails.root}/config/locales/*.yml"].size
